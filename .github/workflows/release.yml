@@ -1,0 +1,40 @@
+name: Build Windows exe
+
+# Se déclenche quand tu publies un tag "v..." (ex: v1.0.0)
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Récupère le code
+        uses: actions/checkout@v4
+
+      - name: Installe Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Vérifie le script
+        run: node --check HAweb-infoCK.js
+
+      - name: Construit HAweb-infoCK.exe
+        shell: powershell
+        run: |
+          mkdir build
+          Copy-Item HAweb-infoCK.js build/
+          Copy-Item (Get-Command node.exe).Source build/node.exe
+          npx --yes caxa --input build --output HAweb-infoCK.exe -- "{{caxa}}/node.exe" "{{caxa}}/HAweb-infoCK.js"
+          Get-Item HAweb-infoCK.exe
+
+      - name: Attache l'exe à la Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: HAweb-infoCK.exe
+          generate_release_notes: true
