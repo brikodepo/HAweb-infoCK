@@ -14,7 +14,7 @@
 
 ### Option A — Exécutable Windows (le plus simple)
 
-1. Va dans l'onglet [**Releases**](https://github.com/TON-PSEUDO/HAweb-infoCK/releases) et télécharge `HAweb-infoCK.exe`.
+1. Va dans l'onglet [**Releases**](https://github.com/brikodepo/HAweb-infoCK/releases) et télécharge `HAweb-infoCK.exe`.
 2. **Double-clique dessus.** Rien à installer, tout est embarqué dans le fichier.
 
 > 🛡️ Si Windows affiche *« source inconnue »* : *Informations complémentaires → Exécuter quand même* (normal, l'exécutable est fait maison et non signé).
@@ -24,7 +24,7 @@
 Prérequis : [Node.js 18+](https://nodejs.org/).
 
 ```bash
-git clone https://github.com/TON-PSEUDO/HAweb-infoCK.git
+git clone https://github.com/brikodepo/HAweb-infoCK.git
 cd HAweb-infoCK
 node HAweb-infoCK.js
 # ou avec une cible directe :
