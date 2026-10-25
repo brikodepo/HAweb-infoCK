@@ -1,0 +1,16 @@
+{
+  "name": "haweb-infock",
+  "version": "1.0.0",
+  "description": "HAweb-infoCK - Outil de reconnaissance web pour CTF, tourne dans le terminal",
+  "type": "module",
+  "main": "HAweb-infoCK.js",
+  "bin": {
+    "haweb-infock": "./HAweb-infoCK.js"
+  },
+  "scripts": {
+    "start": "node HAweb-infoCK.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

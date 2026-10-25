@@ -1,0 +1,10 @@
+# Exécutable Windows (~75 Mo) : ne pas versionner,
+# le déposer plutôt en pièce jointe d'une Release GitHub
+*.exe
+
+# Dépendances éventuelles
+node_modules/
+
+# Rapports générés par l'outil
+HAweb-infoCK-*.md
+rapport-*.md
